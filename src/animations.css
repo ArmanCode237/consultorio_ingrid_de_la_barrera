@@ -1,0 +1,220 @@
+/* ================= KEYFRAMES PRINCIPALES ================= */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(8px) scale(1.04);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(60, 84, 153, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(60, 84, 153, 0);
+  }
+}
+
+/* ================= TRANSICIÓN DE PÁGINA Y HERO ================= */
+main {
+  animation: pageFadeIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-content,
+.page-hero .hero-content {
+  animation: pageFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+
+.hero-image {
+  animation: pageFadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.025) translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+}
+
+/* ================= ELEMENTOS FLOTANTES CONTINUOS ================= */
+/* Círculos decorativos en Nosotros, Preguntas y Servicios */
+.avatar-dot.dot-top,
+.c-sub-teal,
+.step-badge {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.avatar-dot.dot-bottom,
+.c-sub-coral {
+  animation: floatReverse 4.5s ease-in-out infinite;
+}
+
+.c-main-yellow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.watermark-brain {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+/* ================= CLASES SCROLL REVEAL AUTOMÁTICAS ================= */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.88);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Estado activo cuando el elemento entra en pantalla */
+.reveal-item.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible,
+.reveal-zoom.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Retrasos escalonados para grillas (tarjetas, pilares, políticas) */
+.cards-grid > *:nth-child(1),
+.pillars-grid > *:nth-child(1),
+.pilares-photo-grid > *:nth-child(1),
+.work-model-diagram > *:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.cards-grid > *:nth-child(2),
+.pillars-grid > *:nth-child(2),
+.pilares-photo-grid > *:nth-child(2),
+.work-model-diagram > *:nth-child(2) {
+  transition-delay: 0.18s;
+}
+
+.cards-grid > *:nth-child(3),
+.pillars-grid > *:nth-child(3),
+.pilares-photo-grid > *:nth-child(3),
+.work-model-diagram > *:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.cards-grid > *:nth-child(4),
+.pillars-grid > *:nth-child(4) {
+  transition-delay: 0.42s;
+}
+
+/* ================= MICRO-INTERACCIONES Y HOVER ================= */
+.service-card,
+.service-strip-card,
+.pilar-photo-card,
+.policy-card,
+.testimonio-card {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.service-card:hover,
+.pilar-photo-card:hover,
+.policy-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 28px rgba(60, 84, 153, 0.12);
+}
+
+.service-strip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(14, 159, 136, 0.14);
+}
+
+.service-strip-card:hover .service-strip-circle,
+.service-card:hover .card-icon-circle {
+  transform: scale(1.08) rotate(4deg);
+  transition: transform 0.3s ease;
+}
+
+.testimonio-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 6px 18px rgba(234, 180, 67, 0.18);
+}
+
+.btn-pill-lg,
+.btn-nav,
+.btn-agendar-submit {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.btn-darkblue {
+  animation: pulseGlow 2.8s infinite;
+}
+
+.contact-channels-list a {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.contact-channels-list a:hover {
+  transform: translateX(8px);
+  color: var(--primary-blue);
+}
+
+/* Accesibilidad: respeta si el usuario desactiva animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  .reveal-item,
+  .reveal-left,
+  .reveal-right,
+  .reveal-zoom {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
