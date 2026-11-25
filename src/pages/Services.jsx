@@ -1,16 +1,19 @@
-import { ArrowRight, UsersRound, ToyBrick, HandHeart } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { HeroBanner, CTASection } from '../components/Layout';
+import PillarsCarousel from '../components/PillarsCarousel';
 import { services, workSteps } from '../data/content';
 import hero from '../assets/hero-services.webp';
-import play from '../assets/pillar-activities.webp';
+import play from '../assets/pillar-play.webp';
+import activities from '../assets/pillar-activities.webp';
 import group from '../assets/pillar-individual.webp';
 import family from '../assets/pillar-family.webp';
 
 export default function Services() {
   const pillars = [
-    { title: 'Aprender jugando', description: 'Actividades lúdicas y significativas.', image: play, icon: ToyBrick, alt: 'Material didáctico y juego guiado' },
-    { title: 'Trabajo individual y grupal', description: 'Desarrollo individual y generalización de habilidades.', image: group, icon: UsersRound, alt: 'Actividades de aprendizaje utilizando materiales visuales' },
-    { title: 'Acompañamiento familiar', description: 'Orientación a padres y cuidadores.', image: family, icon: HandHeart, alt: 'Niño realizando una actividad de coordinación en sesión' },
+    { title: 'Aprender jugando', description: 'Actividades lúdicas y significativas.', image: play, alt: 'Tarjetas didácticas de colores utilizadas en una sesión de juego' },
+    { title: 'Trabajo individual y grupal', description: 'Desarrollo individual y generalización de habilidades.', image: group, alt: 'Actividad con tarjetas de figuras geométricas de color turquesa' },
+    { title: 'Acompañamiento familiar', description: 'Orientación a padres y cuidadores.', image: family, alt: 'Actividad con piezas de colores para desarrollar habilidades' },
+    { title: 'Actividades de aprendizaje', description: 'Estrategias de aprendizaje mediante actividades lúdicas y funcionales.', image: activities, alt: 'Materiales educativos y bloques durante una actividad de aprendizaje' },
   ];
   return <>
     <HeroBanner color="green" title="Servicios" subtitle="Cada persona es única. Nuestro enfoque también." image={hero} alt="Consultorio preparado para valoración y actividades terapéuticas" />
@@ -20,7 +23,7 @@ export default function Services() {
     <section className="process-section pattern-bg" id="modelo"><div className="container"><div className="center-title"><span className="eyebrow">Nuestro método</span><h2>Nuestro modelo de trabajo</h2><p>Un proceso claro, con objetivos compartidos y seguimiento constante.</p></div>
       <div className="steps-grid">{workSteps.map(({ num, title, accent, description, icon: Icon }, i) => <article className="step-card" key={num}><span className="step-number">{num}</span><Icon size={52} strokeWidth={1.2} /><h3>{title}</h3><strong>{accent}</strong><p>{description}</p>{i<2 && <span className="step-arrow" aria-hidden="true"><ArrowRight /></span>}</article>)}</div>
     </div></section>
-    <section className="container pillars-section"><div className="center-title"><span className="eyebrow">Lo que nos guía</span><h2>Nuestros pilares</h2></div><div className="pillars-grid">{pillars.map(({ title, description, image, alt }) => <article className="pillar-card" key={title}><img src={image} alt={alt} loading="lazy" /><div className="pillar-copy"><h3>{title}</h3><p>{description}</p></div></article>)}</div></section>
+    <section className="container pillars-section"><div className="center-title"><span className="eyebrow">Lo que nos guía</span><h2>Nuestros pilares</h2></div><PillarsCarousel pillars={pillars} /></section>
     <section className="container approaches-section"><div className="approaches-title"><h2>Individual,<br/>grupal y<br/>familiar<span>.</span></h2></div><div className="approaches-copy"><p><strong>Sesiones individuales:</strong> trabajo personalizado y objetivos específicos.</p><p><strong>Sesiones grupales:</strong> práctica, interacción y generalización de habilidades.</p><p><strong>Familia:</strong> orientación para favorecer la continuidad del proceso fuera de las sesiones.</p><p className="highlight">Nuestro objetivo final es que las habilidades puedan utilizarse en situaciones escolares, familiares y sociales.</p></div></section>
     <CTASection title="Encontrar el apoyo adecuado comienza con una valoración integral." />
   </>;

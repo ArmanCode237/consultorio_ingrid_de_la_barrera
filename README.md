@@ -70,3 +70,13 @@ src/
 ## Publicación
 
 La aplicación usa BrowserRouter. Ejemplo de regla para Netlify: crea `public/_redirects` con `/* /index.html 200`. En Apache puedes usar un `.htaccess` que redirija las rutas internas al index. No publiques el `.ai` original (no está incluido en este proyecto), y revisa las políticas del tratamiento de datos personales antes de conectar un backend.
+
+## Carrusel «Nuestros pilares» — Servicios
+
+La ruta `/servicios` incorpora el carrusel de la **mesa de trabajo 2**. Conserva las tres tarjetas visibles del Illustrator y agrega la cuarta fotografía incluida en el archivo (fuera del encuadre de la mesa). Esta última utiliza el título «Actividades de aprendizaje» y un texto adaptado de la descripción de «Aprendizaje» del mismo diseño.
+
+- Fotos: `src/assets/pillar-play.webp`, `pillar-individual.webp`, `pillar-family.webp` y `pillar-activities.webp`.
+- Componente reutilizable: `src/components/PillarsCarousel.jsx`.
+- Soporta desplazamiento táctil, arrastre con ratón, flechas, indicadores, reproducción/pausa automática y rotación circular.
+- La reproducción se pausa al pasar el cursor o enfocar controles. La opción de movimiento reducido del dispositivo desactiva la reproducción automática.
+- Puedes actualizar títulos/descripciones/orden en `src/pages/Services.jsx`.
