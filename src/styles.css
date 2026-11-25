@@ -313,3 +313,45 @@ h1,h2,h3,h4{line-height:1.13;margin:0;font-weight:900;letter-spacing:-.035em}
   .booking-page{padding:20px 12px 55px}.booking-card{padding:28px 18px}.booking-card-header h1{font-size:2.1rem}.booking-form{gap:23px}.radio-grid{grid-template-columns:1fr 1fr}.radio-option{font-size:.78rem;padding:10px 8px}.radio-three{grid-template-columns:repeat(3,1fr)}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* --- HOME | Carrusel «¿En qué podemos ayudarte?» (9 tarjetas) --- */
+.strengths-carousel{--strength-gap:16px;position:relative;width:100%;margin:0 auto}
+.strengths-viewport{overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;touch-action:pan-x pan-y;cursor:grab;border-radius:18px;padding:8px 2px 20px;outline-offset:4px}
+.strengths-viewport::-webkit-scrollbar{display:none}
+.strengths-viewport.is-dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.strengths-track{display:flex;align-items:stretch;gap:var(--strength-gap);position:relative}
+.strengths-carousel .strengths-slide{flex:0 0 calc((100% - 3*var(--strength-gap))/4);min-width:0;scroll-snap-align:start;scroll-snap-stop:normal;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:286px;padding:25px 17px 28px;border:1.5px solid #a5d9f4;border-radius:19px;background:#fff;box-shadow:0 10px 25px rgba(57,94,140,.045);transition:box-shadow .22s, border-color .22s, transform .22s}
+.strengths-carousel .strengths-slide:hover{border-color:var(--cyan);box-shadow:0 16px 36px rgba(44,92,150,.11);transform:translateY(-3px)}
+.strengths-carousel .strength-icon{width:99px;height:99px;flex-shrink:0;margin:1px auto 17px}
+.strengths-carousel .strength-icon svg{max-width:53%;max-height:53%}
+.strengths-carousel .strengths-slide h3{font-size:1rem;line-height:1.25;margin-bottom:8px;color:var(--blue);text-wrap:balance}
+.strengths-carousel .strengths-slide p{font-size:.88rem;line-height:1.42;text-wrap:pretty}
+.strengths-carousel .strengths-slide .strength-icon.green~h3{color:var(--green)}
+.strengths-carousel .strengths-slide .strength-icon.coral~h3{color:var(--coral)}
+.strengths-carousel .strengths-slide .strength-icon.yellow~h3{color:#d79d23}
+.strengths-controls{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:8px}
+.strengths-arrow{border:1px solid #cfdaeb;background:white;color:var(--blue);width:45px;height:45px;flex:0 0 auto;border-radius:100%;display:grid;place-items:center;box-shadow:0 5px 18px rgba(68,95,158,.08);transition:color .2s,background .2s,transform .2s}
+.strengths-arrow:hover{background:var(--blue);color:white;transform:translateY(-2px)}
+.strengths-pagination{display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap}
+.strengths-dot{border:0;padding:0;width:10px;height:10px;border-radius:50%;background:#c8d6e7;transition:width .2s,background .2s}
+.strengths-dot:hover{background:var(--cyan)}
+.strengths-dot-active{width:29px;border-radius:99px;background:var(--green)}
+.strengths-play{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 12px;min-height:36px;border-radius:50px;border:1px solid #d3e0ef;color:var(--blue);background:white;font-size:.78rem;font-weight:800}
+.strengths-play:hover{background:#f0f8fc}
+.strengths-viewport:focus-visible,.strengths-arrow:focus-visible,.strengths-dot:focus-visible,.strengths-play:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+@media(max-width:900px){
+  .strengths-carousel .strengths-slide{flex-basis:calc((100% - var(--strength-gap))/2);min-height:263px;padding:24px 20px}
+}
+@media(max-width:560px){
+  .strengths-carousel{--strength-gap:13px}
+  .strengths-carousel .strengths-slide{flex-basis:100%;min-height:268px;padding:25px 23px}
+  .strengths-carousel .strength-icon{width:88px;height:88px;margin:0 auto 17px}
+  .strengths-carousel .strengths-slide h3{font-size:1.09rem}
+  .strengths-carousel .strengths-slide p{font-size:.93rem}
+  .strengths-controls{gap:10px}
+  .strengths-arrow{width:40px;height:40px}
+  .strengths-pagination{gap:6px}
+  .strengths-dot{width:9px;height:9px}
+  .strengths-dot-active{width:23px}
+  .strengths-play{flex:0 0 auto}
+}

@@ -80,3 +80,16 @@ La ruta `/servicios` incorpora el carrusel de la **mesa de trabajo 2**. Conserva
 - Soporta desplazamiento táctil, arrastre con ratón, flechas, indicadores, reproducción/pausa automática y rotación circular.
 - La reproducción se pausa al pasar el cursor o enfocar controles. La opción de movimiento reducido del dispositivo desactiva la reproducción automática.
 - Puedes actualizar títulos/descripciones/orden en `src/pages/Services.jsx`.
+
+## Carrusel «¿En qué podemos ayudarte?» — HOME
+
+La ruta `/` incorpora un carrusel de **9 tarjetas** en la sección «¿En qué podemos ayudarte?».
+
+- Componente: `src/components/StrengthsCarousel.jsx`.
+- Contenido y orden: arreglo `strengths` en `src/data/content.js`.
+- Se muestran 4 tarjetas en escritorio, 2 en tablet y 1 en móvil.
+- Incluye desplazamiento táctil, arrastre con ratón, flechas, selección mediante indicadores, navegación con teclado, rotación circular y avance automático con pausa.
+- La reproducción automática se detiene cuando el puntero está sobre el carrusel, cuando hay foco y cuando el dispositivo indica movimiento reducido.
+- Conserva el diseño de iconos circulares y la paleta del Illustrator.
+
+**Transparencia de origen:** la vista exportada de la mesa HOME del `.ai` muestra cuatro tarjetas completas y solo un fragmento de la siguiente. Se conservaron literalmente las cuatro tarjetas originales que ya contenía el proyecto, y para completar las nueve solicitadas se incorporaron **cinco propuestas editoriales basadas en los temas de Lenguaje, Habla, Aprendizaje, Neuropsicología y acompañamiento familiar** que sí aparecen en otras mesas de trabajo del mismo archivo. Estos cinco títulos no pueden verificarse como copias textuales de las tarjetas ocultas del diseño; revísalos antes de publicar si necesitas correspondencia exacta.

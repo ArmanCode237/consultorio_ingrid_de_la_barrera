@@ -1,4 +1,4 @@
-import { BrainCircuit, MessageCircleMore, Heart, BookOpen, UsersRound, Utensils, BadgeCheck } from 'lucide-react';
+import { BrainCircuit, MessageCircleMore, Heart, BookOpen, UsersRound, Utensils, BadgeCheck, Mic, ListChecks, HandHeart } from 'lucide-react';
 
 export const navigation = [
   { to: '/servicios', label: 'Servicios' },
@@ -49,6 +49,14 @@ export const strengths = [
   { title: 'Desarrollo neuropsicológico', description: 'Evaluación e intervención de procesos cognitivos relacionados con el desarrollo.', icon: BrainCircuit, className: 'blue' },
   { title: 'Área emocional', description: 'Dificultades en la regulación de emociones y conductas que pueden interferir con el bienestar y la adaptación.', icon: Heart, className: 'coral' },
   { title: 'Sesiones individuales y grupales', description: 'Intervenciones personalizadas y espacios para favorecer la generalización de habilidades.', icon: UsersRound, className: 'yellow' },
+  // Estas cinco categorías se adaptan de los contenidos presentes en las
+  // otras mesas del Illustrator: Servicios y el modelo de acompañamiento.
+  // El PDF de la mesa HOME solo muestra cuatro tarjetas legibles completas.
+  { title: 'Lenguaje y comunicación', description: 'Apoyo en comprensión, expresión, semántica, sintaxis y habilidades comunicativas.', icon: MessageCircleMore, className: 'green' },
+  { title: 'Habla y articulación', description: 'Intervención oromotora, articulación de sonidos, fluidez verbal y voz.', icon: Mic, className: 'blue' },
+  { title: 'Aprendizaje y lectoescritura', description: 'Estrategias para lectura, escritura, cálculo, comprensión y razonamiento.', icon: BookOpen, className: 'coral' },
+  { title: 'Atención y funciones ejecutivas', description: 'Fortalecimiento de la atención, memoria, organización y planificación.', icon: ListChecks, className: 'yellow' },
+  { title: 'Orientación a familias', description: 'Acompañamiento a padres y cuidadores para dar continuidad a los avances.', icon: HandHeart, className: 'green' },
 ];
 
 export const childSigns = [
